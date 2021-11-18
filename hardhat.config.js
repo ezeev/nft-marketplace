@@ -16,6 +16,9 @@ const RINKEBY_WALLET_PK = process.env.RINKEBY_WALLET_PK
 // For example: hh verify --network rinkeby 0x4aBe3384567F2E82fA1B98DfD9D422f593d17651
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 
+// For forking from mainnet when deploying locally
+const MAINNET_FORKING_URL = process.env.MAINNET_FORKING_URL
+
 module.exports = {
   defaultNetwork: "hardhat",
   etherscan: {
@@ -27,7 +30,7 @@ module.exports = {
       forking: { 
         // forking from a mainnet allows us to leverage existing chainlink contracts
         // and test as if we were running on mainnet!
-        url: "https://eth-mainnet.alchemyapi.io/v2/uriMC2lGhm2sTCEl3TIwEIjTNxzhcRZr"
+        url: MAINNET_FORKING_URL
       }
     },
     rinkeby: {
